@@ -25,3 +25,4 @@ if (format === "text") {
 } else {
   console.log(JSON.stringify(result, null, 2));
 }
+
