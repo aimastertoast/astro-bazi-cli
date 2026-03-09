@@ -1,0 +1,26 @@
+{
+  "name": "astro-bazi-cli",
+  "version": "1.0.0",
+  "description": "Simple CLI tool that outputs Bazi / astro JSON for a given date",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aimastertoast/astro-bazi-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aimastertoast/astro-bazi-cli/issues"
+  },
+  "homepage": "https://github.com/aimastertoast/astro-bazi-cli#readme",
+  "devDependencies": {
+    "@types/node": "^25.3.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
