@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 const args = process.argv.slice(2);
-const dateStr = args[0] || "1990-01-01";
+const dateStr = args.find(a => !a.startsWith("--")) || "1990-01-01";
+const format = args.includes("--format=text") ? "text" : "json";
 
 const result = {
   date: dateStr,
@@ -13,4 +14,14 @@ const result = {
   }
 };
 
-console.log(JSON.stringify(result, null, 2));
+if (format === "text") {
+  console.log(
+    `Bazi for ${result.date}: ` +
+      `Year=${result.bazi.yearPillar}, ` +
+      `Month=${result.bazi.monthPillar}, ` +
+      `Day=${result.bazi.dayPillar}, ` +
+      `Hour=${result.bazi.hourPillar}`
+  );
+} else {
+  console.log(JSON.stringify(result, null, 2));
+}
