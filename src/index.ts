@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 
-const args = process.argv.slice(2);
-const dateStr = args.find(a => !a.startsWith("--")) || "1990-01-01";
-const format = args.includes("--format=text") ? "text" : "json";
+const argv = process.argv.slice(2);
+
+// Find date argument (first non-flag)
+const dateStr = argv.find(a => !a.startsWith("--")) || "1990-01-01";
+
+// Check flags
+const formatFlag = argv.find(a => a.startsWith("--format="));
+const format = formatFlag === "--format=text" ? "text" : "json";
 
 const result = {
   date: dateStr,
